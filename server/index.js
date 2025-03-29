@@ -14,7 +14,11 @@ app.get('/', (req, res) => {
   res.send('VitaVoice API działa.');
 });
 
-// API routes
+app.post('/api/contact', (req, res) => {
+  const { name, email, message } = req.body;
+  console.log('Otrzymano wiadomość kontaktową:', name, email, message);
+  res.status(200).json({ success: true, message: 'Wiadomość została wysłana!' });
+});
 
 app.listen(PORT, () => {
   console.log(`Server uruchomiony na porcie ${PORT}`);
