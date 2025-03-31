@@ -1,16 +1,19 @@
+import { Link } from 'react-router-dom';
+import ThemeToggle from '../ThemeProvider/ThemeToggle';
 import { StyledHeader } from './Header.styled';
 
-function Header() {
+function Header({ toggleTheme, isDarkMode }) {
   return (
     <StyledHeader>
       <h1>VitaVoice</h1>
+      <ThemeToggle toggleTheme={toggleTheme} isDark={isDarkMode} />
       <nav>
-        <a href="/">Strona główna</a>
-        <a href="/o-nas">O nas</a>
-        <a href="/repertuar">Repertuar</a>
-        <a href="/wydarzenia">Wydarzenia</a>
-        <a href="/galeria">Galeria</a>
-        <a href="/kontakt">Kontakt</a>
+        <Link to="/">Strona główna</Link>
+        <Link to="/o-nas">O nas</Link>
+        <Link to="/repertuar">Repertuar</Link>
+        <Link to="/wydarzenia">Wydarzenia</Link>
+        <Link to="/galeria">Galeria</Link>
+        <Link to="/kontakt">Kontakt</Link>
       </nav>
     </StyledHeader>
   );

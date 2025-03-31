@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import ThemeToggle from './components/ThemeProvider/ThemeToggle';
+import { useState } from 'react';
 import { lightTheme, darkTheme } from './styles/theme';
 import GlobalStyles from './styles/GlobalStyles';
-import { useState } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Repertoire from './pages/Repertoire';
@@ -15,16 +14,26 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  const toggleTheme = () => {
+    setIsDarkMode(prev => {
+      localStorage.setItem('theme', JSON.stringify(!prev));
+      return !prev;
+    });
+  };
+
   const theme = isDarkMode ? darkTheme : lightTheme;
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <ThemeToggle toggleTheme={() => setIsDarkMode(!isDarkMode)} isDark={isDarkMode} />
       <Router>
         <Layout>
-          <Header />
+          <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
           <main>
             <Routes>
               <Route path="/" element={<Home />} />

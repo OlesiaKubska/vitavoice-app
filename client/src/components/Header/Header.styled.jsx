@@ -12,7 +12,6 @@ export const StyledHeader = styled.header`
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    font-family: 'Playfair Display', serif;
   }
 
   nav {
@@ -20,24 +19,41 @@ export const StyledHeader = styled.header`
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    margin-top: 1rem;
   }
 
   nav a {
     font-size: 1rem;
     font-weight: bold;
     color: ${({ theme }) => theme.primary};
-    transition: color 0.3s ease;
 
     &:hover {
       color: ${({ theme }) => theme.accent};
     }
   }
 
+  .theme-toggle {
+    margin-top: 1rem;
+  }
+
   @media ${device.tablet} {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .theme-toggle {
+      order: 2;
+      margin-top: 0;
+    }
+
     nav {
       flex-wrap: nowrap;
+      order: 3;
+      gap: 2rem;
     }
   }
 `;
