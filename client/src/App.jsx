@@ -1,17 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { lightTheme, darkTheme } from './styles/theme';
 import GlobalStyles from './styles/GlobalStyles';
-import Home from './pages/Home';
-import About from './pages/About';
-import Repertoire from './pages/Repertoire';
-import Events from './pages/Events';
-import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
-import Layout from './components/Layout/Layout';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Home from 'pages/Home';
+import About from 'pages/About';
+import Repertoire from 'pages/Repertoire';
+import Events from 'pages/Events';
+import Gallery from 'pages/Gallery';
+import Contact from 'pages/Contact';
+import Layout from 'components/Layout/Layout';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -31,7 +31,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Router>
+      
         <Layout>
           <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
           <main>
@@ -46,7 +46,7 @@ function App() {
           </main>
           <Footer />
         </Layout>
-      </Router>
+      
     </ThemeProvider>
   );
 }
