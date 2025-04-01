@@ -8,28 +8,11 @@ export const StyledHeader = styled.header`
   padding: 2rem 1rem;
   background-color: ${({ theme }) => theme.secondary};
   color: ${({ theme }) => theme.primary};
+  position: relative;
 
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-
-  nav a {
-    font-size: 1rem;
-    font-weight: bold;
-    color: ${({ theme }) => theme.primary};
-
-    &:hover {
-      color: ${({ theme }) => theme.accent};
-    }
   }
 
   .theme-toggle {
@@ -46,14 +29,48 @@ export const StyledHeader = styled.header`
     }
 
     .theme-toggle {
-      order: 2;
       margin-top: 0;
     }
+  }
+`;
 
-    nav {
-      flex-wrap: nowrap;
-      order: 3;
-      gap: 2rem;
+export const BurgerButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: ${({ theme }) => theme.primary};
+  z-index: 1001;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media ${device.laptop} {
+    display: none;
+  }
+`;
+
+export const DesktopNav = styled.nav`
+  display: none;
+
+  @media ${device.laptop} {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: ${({ theme }) => theme.primary};
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: ${({ theme }) => theme.accent};
     }
   }
 `;

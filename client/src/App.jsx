@@ -31,7 +31,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      
         <Layout>
           <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
           <main>
@@ -46,7 +45,6 @@ function App() {
           </main>
           <Footer />
         </Layout>
-      
     </ThemeProvider>
   );
 }
