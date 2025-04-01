@@ -1,11 +1,13 @@
-import styled from 'styled-components';
+import styled from 'styled-components'; 
 
 export const StyledMobileMenu = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: ${({ $isOpen }) => ($isOpen ? 'translate(-50%, -50%)' : 'translate(-50%, -150%)')};
+  width: 90%;
+  max-width: 400px;
+  height: auto;
   background-color: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
   display: flex;
@@ -14,9 +16,10 @@ export const StyledMobileMenu = styled.div`
   justify-content: center;
   z-index: 1000;
   padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
   transition: all 0.4s ease;
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
-  transform: ${({ $isOpen }) => ($isOpen ? 'translateY(0)' : 'translateY(-100%)')};
   pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
 
   nav {
@@ -52,4 +55,17 @@ export const CloseButton = styled.button`
   &:hover {
     color: ${({ theme }) => theme.accent};
   }
+`;
+
+export const Backdrop = styled.div`
+  position: fixed;
+  inset: 0;
+  background: ${({ theme }) => theme.backdrop};
+  z-index: 999;
+  opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
+  transition: opacity 0.4s ease;
+  pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

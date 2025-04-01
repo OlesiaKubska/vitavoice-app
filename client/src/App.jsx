@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { lightTheme, darkTheme } from './styles/theme';
 import GlobalStyles from './styles/GlobalStyles';
-import Home from 'pages/Home';
+import Home from 'pages/Home/Home';
 import About from 'pages/About';
 import Repertoire from 'pages/Repertoire';
 import Events from 'pages/Events';

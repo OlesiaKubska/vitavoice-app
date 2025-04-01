@@ -4,7 +4,9 @@ export const lightTheme = {
     background: '#ffffff',
     primary: '#4B2C5E',        
     accent: '#D6AD60',        
-    secondary: '#FDE8F4',   
+    secondary: '#FDE8F4',
+    backdrop: 'rgba(0, 0, 0, 0.3)',
+    textOnLight: '#333333',   
   };
   
   export const darkTheme = {
@@ -14,4 +16,6 @@ export const lightTheme = {
     primary: '#D6AD60',
     accent: '#FDE8F4',
     secondary: '#4B2C5E',
+    backdrop: 'rgba(255, 255, 255, 0.1)',
+    textOnLight: '#1F1F1F',
   };
