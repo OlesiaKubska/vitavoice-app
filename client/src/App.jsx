@@ -4,7 +4,7 @@ import { useState } from "react";
 import { lightTheme, darkTheme } from "./styles/theme";
 import GlobalStyles from "./styles/GlobalStyles";
 import Home from "pages/Home/Home";
-import About from "pages/About";
+import About from "pages/About/About";
 import Repertoire from "pages/Repertoire/Repertoire";
 import Events from "pages/Events";
 import Gallery from "pages/Gallery";
