@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ToggleButton = styled.button`
   border: 2px solid ${({ theme }) => theme.primary};

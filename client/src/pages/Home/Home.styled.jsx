@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Hero = styled.section`
   text-align: center;
@@ -11,7 +11,7 @@ export const Hero = styled.section`
     color: ${({ theme }) => theme.primary};
   }
 
-   h2 {
+  h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: ${({ theme }) => theme.textOnLight};

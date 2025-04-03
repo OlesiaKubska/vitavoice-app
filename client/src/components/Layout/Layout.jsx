@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { device } from './../../styles/breakpoints';
+import styled from "styled-components";
+import { device } from "./../../styles/breakpoints";
 
 const Container = styled.div`
   max-width: 1200px;

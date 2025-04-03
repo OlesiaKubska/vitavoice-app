@@ -1,5 +1,5 @@
-import { FaSun, FaMoon } from 'react-icons/fa';
-import { ToggleButton } from './ThemeToggleButton.styled';
+import { FaSun, FaMoon } from "react-icons/fa";
+import { ToggleButton } from "./ThemeToggleButton.styled";
 
 const ThemeToggle = ({ toggleTheme, isDark }) => {
   return (

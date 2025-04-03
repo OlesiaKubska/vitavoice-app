@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ThemeToggle from '../ThemeProvider/ThemeToggle';
-import MobileMenu from '../MobileMenu/MobileMenu';
-import { StyledHeader, DesktopNav, BurgerButton } from './Header.styled';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import ThemeToggle from "../ThemeProvider/ThemeToggle";
+import MobileMenu from "../MobileMenu/MobileMenu";
+import { StyledHeader, DesktopNav, BurgerButton } from "./Header.styled";
 
 function Header({ toggleTheme, isDarkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(prev => !prev);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
     <StyledHeader>
@@ -15,7 +15,7 @@ function Header({ toggleTheme, isDarkMode }) {
       {!menuOpen && (
         <BurgerButton
           onClick={toggleMenu}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >

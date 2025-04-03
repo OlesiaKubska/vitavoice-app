@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { GallerySection, Hero, ButtonGroup} from './Home.styled'
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { GallerySection, Hero, ButtonGroup } from "./Home.styled";
 
 function Home() {
   useEffect(() => {
@@ -19,11 +19,15 @@ function Home() {
       <Hero data-aos="fade-up">
         <p>Witamy w VitaVoice</p>
         <h1>Razem śpiewamy – razem tworzymy</h1>
-        
+
         <p>Kobiecy klub wokalny pełen pasji, harmonii i wspólnoty.</p>
         <ButtonGroup>
-          <Link to="/kontakt" className="btn btn-primary">Skontaktuj się z nami</Link>
-          <Link to="/o-nas" className="btn btn-outline">Dowiedz się więcej</Link>
+          <Link to="/kontakt" className="btn btn-primary">
+            Skontaktuj się z nami
+          </Link>
+          <Link to="/o-nas" className="btn btn-outline">
+            Dowiedz się więcej
+          </Link>
         </ButtonGroup>
       </Hero>
       <GallerySection data-aos="fade-up">
@@ -35,14 +39,28 @@ function Home() {
           autoplay={{ delay: 4000 }}
           pagination={{ clickable: true }}
         >
-          <SwiperSlide><img src="https://source.unsplash.com/800x500/?choir,women" alt="Zdjęcie 1" /></SwiperSlide>
-          <SwiperSlide><img src="https://source.unsplash.com/800x500/?singing,classical" alt="Zdjęcie 2" /></SwiperSlide>
-          <SwiperSlide><img src="https://source.unsplash.com/800x500/?concert,performance" alt="Zdjęcie 3" /></SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="https://source.unsplash.com/800x500/?choir,women"
+              alt="Zdjęcie 1"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="https://source.unsplash.com/800x500/?singing,classical"
+              alt="Zdjęcie 2"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src="https://source.unsplash.com/800x500/?concert,performance"
+              alt="Zdjęcie 3"
+            />
+          </SwiperSlide>
         </Swiper>
       </GallerySection>
     </>
-    
   );
-  }
-  
-  export default Home;
+}
+
+export default Home;
