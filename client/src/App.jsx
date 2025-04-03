@@ -13,6 +13,7 @@ import Layout from "components/Layout/Layout";
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
 import CookieConsent from "components/CookieConsent/CookieConsent";
+import PrivacyPolicy from "components/PrivacyPolicy/PrivacyPolicy";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -42,6 +43,7 @@ function App() {
             <Route path="/wydarzenia" element={<Events />} />
             <Route path="/galeria" element={<Gallery />} />
             <Route path="/kontakt" element={<Contact />} />
+            <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <Footer />

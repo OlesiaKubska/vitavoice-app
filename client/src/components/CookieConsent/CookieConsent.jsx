@@ -22,7 +22,8 @@ function CookieConsent() {
     <ConsentContainer>
       <p>
         Ta strona używa plików cookie do poprawy działania oraz analityki.
-        Kontynuując, zgadzasz się na naszą politykę prywatności.
+        Kontynuując, zgadzasz się na naszą{" "}
+        <Link to="/polityka-prywatnosci">politykę prywatności</Link>.
       </p>
       <ButtonGroup>
         <button className="accept" onClick={() => handleConsent(true)}>

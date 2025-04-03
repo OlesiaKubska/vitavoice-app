@@ -6,22 +6,26 @@ function Repertoire() {
   const repertoireItems = [
     {
       title: "Amazing Grace",
-      image: "https://source.unsplash.com/800x500/?choir,grace",
+      image:
+        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
       video: "https://www.youtube.com/embed/CDdvReNKKuk",
     },
     {
       title: "Hallelujah",
-      image: "https://source.unsplash.com/800x500/?hallelujah,singing",
+      image:
+        "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80",
       video: "https://www.youtube.com/embed/y8AWFf7EAc4",
     },
     {
       title: "Let It Be",
-      image: "https://source.unsplash.com/800x500/?music,let-it-be",
+      image:
+        "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=80",
       video: "https://www.youtube.com/embed/QDYfEBY9NM4",
     },
     {
       title: "Pieśni ludowe",
-      image: "https://source.unsplash.com/800x500/?folk,music",
+      image:
+        "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=800&q=80",
       video: "https://www.youtube.com/embed/xbD8r0EJHBA",
     },
   ];
@@ -41,6 +45,7 @@ function Repertoire() {
           <SwiperSlide key={index}>
             <div className="slide-item">
               <img src={item.image} alt={item.title} />
+              <div>{item.title}</div>
               <iframe
                 width="100%"
                 height="250"
