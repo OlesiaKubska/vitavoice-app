@@ -7,7 +7,7 @@ import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Repertoire from "pages/Repertoire/Repertoire";
 import Events from "pages/Events/Events";
-import Gallery from "pages/Gallery";
+import Gallery from "pages/Gallery/Gallery";
 import Contact from "pages/Contact";
 import Layout from "components/Layout/Layout";
 import Header from "components/Header/Header";
