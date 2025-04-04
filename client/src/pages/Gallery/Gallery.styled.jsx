@@ -37,4 +37,36 @@ export const Wrapper = styled.section`
       transform: scale(1.02);
     }
   }
+
+  .video-section {
+    margin-top: 4rem;
+    text-align: center;
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: ${({ theme }) => theme.primary};
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      .player-wrapper {
+        position: relative;
+        padding-top: 56.25%;
+        max-width: 800px;
+        width: 100%;
+        height: 400px;
+        margin: 0 auto;
+      }
+
+      .react-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 `;

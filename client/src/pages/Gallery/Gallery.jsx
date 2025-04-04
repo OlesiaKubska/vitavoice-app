@@ -3,6 +3,8 @@ import { Wrapper } from "./Gallery.styled";
 import Masonry from "react-masonry-css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import ReactPlayer from "react-player";
+
 import img1 from "src/assets/images/gallery/photo-1.jpg";
 import img2 from "src/assets/images/gallery/photo-2.jpg";
 import img3 from "src/assets/images/gallery/photo-3.jpg";
@@ -63,6 +65,30 @@ function Gallery() {
         close={() => setIndex(-1)}
         slides={images.map((src) => ({ src }))}
       />
+
+      <div className="video-section">
+        <h3>Nagrania wideo</h3>
+        <div className="video-grid">
+          <div className="player-wrapper">
+            <ReactPlayer
+              className="react-player"
+              url="https://www.youtube.com/watch?v=zpOULjyy-n8"
+              width="100%"
+              height="100%"
+              controls
+            />
+          </div>
+          <div className="player-wrapper">
+            <ReactPlayer
+              className="react-player"
+              url="https://www.youtube.com/watch?v=ScMzIvxBSi4"
+              width="100%"
+              height="100%"
+              controls
+            />
+          </div>
+        </div>
+      </div>
     </Wrapper>
   );
 }
