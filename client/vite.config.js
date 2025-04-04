@@ -1,16 +1,27 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/vitavoice-app/',
+  base: "/vitavoice-app/",
   resolve: {
     alias: {
-      src: path.resolve(__dirname, 'src'),
-      components: path.resolve(__dirname, 'src/components'),
-      pages: path.resolve(__dirname, 'src/pages'),
+      src: path.resolve(__dirname, "src"),
+      components: path.resolve(__dirname, "src/components"),
+      pages: path.resolve(__dirname, "src/pages"),
     },
   },
-})
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom"],
+          lightbox: ["yet-another-react-lightbox"],
+          swiper: ["swiper/react", "swiper"],
+          player: ["react-player"],
+        },
+      },
+    },
+  },
+});
