@@ -6,7 +6,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Repertoire from "pages/Repertoire/Repertoire";
-import Events from "pages/Events";
+import Events from "pages/Events/Events";
 import Gallery from "pages/Gallery";
 import Contact from "pages/Contact";
 import Layout from "components/Layout/Layout";
