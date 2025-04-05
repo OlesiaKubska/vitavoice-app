@@ -8,7 +8,33 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { GallerySection, Hero, ButtonGroup } from "./Home.styled";
 
+import img1 from "src/assets/images/gallery/photo-1.jpg";
+import img2 from "src/assets/images/gallery/photo-2.jpg";
+import img3 from "src/assets/images/gallery/photo-3.jpg";
+import img4 from "src/assets/images/gallery/photo-4.jpg";
+import img5 from "src/assets/images/gallery/photo-5.jpg";
+import img6 from "src/assets/images/gallery/photo-6.jpg";
+import img7 from "src/assets/images/gallery/photo-7.jpg";
+import img8 from "src/assets/images/gallery/photo-8.jpg";
+import img9 from "src/assets/images/gallery/photo-9.jpg";
+import img10 from "src/assets/images/gallery/photo-10.jpg";
+import img11 from "src/assets/images/gallery/photo-11.jpg";
+
 function Home() {
+  const slides = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+  ];
+
   useEffect(() => {
     window.scrollTo(0, 0);
     AOS.init({ duration: 1000, once: true });
@@ -39,24 +65,11 @@ function Home() {
           autoplay={{ delay: 4000 }}
           pagination={{ clickable: true }}
         >
-          <SwiperSlide>
-            <img
-              src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80"
-              alt="Zdjęcie 1"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://images.unsplash.com/photo-1598387850434-9b4a9e0d6c5c?auto=format&fit=crop&w=800&q=80"
-              alt="Zdjęcie 2"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80"
-              alt="Zdjęcie 3"
-            />
-          </SwiperSlide>
+          {slides.map((src, idx) => (
+            <SwiperSlide key={idx}>
+              <img src={src} alt={`Zdjęcie ${idx + 1}`} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </GallerySection>
     </>

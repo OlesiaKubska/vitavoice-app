@@ -1,9 +1,25 @@
 import styled from "styled-components";
 
 export const Hero = styled.section`
-  text-align: center;
+  background-image: url("src/assets/images/home/home-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #fde8f4, #fff9f3);
+  text-align: center;
+  color: ${({ theme }) => theme.textOnBg};
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+  }
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -42,8 +58,9 @@ export const GallerySection = styled.section`
 
   img {
     width: 100%;
-    height: auto;
+    height: 600px;
     object-fit: cover;
+    border-radius: 8px;
   }
 `;
 
