@@ -1,12 +1,30 @@
+import { useEffect } from "react";
 import { Wrapper } from "./About.styled";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import imgMain from "src/assets/images/about/about.jpg";
+import imgBottom from "src/assets/images/about/about-choir.jpg";
 
 function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  const reasons = [
+    "Przyjazna atmosfera i wsparcie kobiet",
+    "Regularne występy i udział w koncertach",
+    "Warsztaty wokalne z profesjonalistami",
+    "Muzyka, która porusza serca",
+    "Wspólne wyjazdy i wydarzenia integracyjne",
+  ];
+
   return (
     <Wrapper>
-      <h1>O nas</h1>
-      <div className="intro">
+      <h1 data-aos="fade-up">O nas</h1>
+      <div className="intro" data-aos="fade-up">
         <div className="intro-text">
           <p>
             VitaVoice to kobiecy klub wokalny skupiający kobiety z pasją do
@@ -25,27 +43,25 @@ function About() {
             wspólnego śpiewania!
           </p>
         </div>
-        <img
-          src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
-          alt="Zespół VitaVoice"
-        />
+        <img data-aos="fade-left" src={imgMain} alt="Zespół VitaVoice" />
       </div>
 
-      <h2>Dlaczego warto do nas dołączyć?</h2>
+      <h2 data-aos="fade-up">Dlaczego warto do nas dołączyć?</h2>
       <ul>
-        <li>Przyjazna atmosfera i wsparcie kobiet</li>
-        <li>Regularne występy i udział w koncertach</li>
-        <li>Warsztaty wokalne z profesjonalistami</li>
-        <li>Muzyka, która porusza serca</li>
-        <li>Wspólne wyjazdy i wydarzenia integracyjne</li>
+        {reasons.map((text, index) => (
+          <li key={index} data-aos="fade-left" data-aos-delay={index * 100}>
+            {text}
+          </li>
+        ))}
       </ul>
 
       <img
-        src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1000&q=80"
-        alt="Zespół VitaVoice"
+        data-aos="zoom-in"
+        src={imgBottom}
+        alt="Zespół VitaVoice performing"
       />
 
-      <h2>Opinie uczestniczek</h2>
+      <h2 data-aos="fade-up">Opinie uczestniczek</h2>
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={30}

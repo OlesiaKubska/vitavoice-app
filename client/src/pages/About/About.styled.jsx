@@ -42,10 +42,11 @@ export const Wrapper = styled.section`
   .intro img {
     flex: 1;
     max-width: 100%;
-    height: auto;
+    height: 460px;
     aspect-ratio: 3/4;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: 400px 400px 0 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
   .intro-text {
@@ -70,6 +71,7 @@ export const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 2rem;
 
     li {
       background-color: ${({ theme }) => theme.background};
@@ -77,7 +79,16 @@ export const Wrapper = styled.section`
       padding: 1rem;
       text-align: left;
       border-radius: 6px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
     }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
   .swiper {
