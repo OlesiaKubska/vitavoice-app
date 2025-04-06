@@ -35,17 +35,17 @@ function App() {
       <GlobalStyles />
       <Layout>
         <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/o-nas" element={<About />} />
-            <Route path="/repertuar" element={<Repertoire />} />
-            <Route path="/wydarzenia" element={<Events />} />
-            <Route path="/galeria" element={<Gallery />} />
-            <Route path="/kontakt" element={<Contact />} />
-            <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
-          </Routes>
-        </main>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/o-nas" element={<About />} />
+          <Route path="/repertuar" element={<Repertoire />} />
+          <Route path="/wydarzenia" element={<Events />} />
+          <Route path="/galeria" element={<Gallery />} />
+          <Route path="/kontakt" element={<Contact />} />
+          <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
+        </Routes>
+
         <Footer />
         <CookieConsent />
       </Layout>

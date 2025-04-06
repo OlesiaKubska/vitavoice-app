@@ -45,21 +45,24 @@ function About() {
         </div>
         <img data-aos="fade-left" src={imgMain} alt="Zespół VitaVoice" />
       </div>
+      <div className="background">
+        <div className="intro-text2">
+          <h2 data-aos="fade-up">Dlaczego warto do nas dołączyć?</h2>
+          <ul>
+            {reasons.map((text, index) => (
+              <li key={index} data-aos="fade-left" data-aos-delay={index * 100}>
+                {text}
+              </li>
+            ))}
+          </ul>
 
-      <h2 data-aos="fade-up">Dlaczego warto do nas dołączyć?</h2>
-      <ul>
-        {reasons.map((text, index) => (
-          <li key={index} data-aos="fade-left" data-aos-delay={index * 100}>
-            {text}
-          </li>
-        ))}
-      </ul>
-
-      <img
-        data-aos="zoom-in"
-        src={imgBottom}
-        alt="Zespół VitaVoice performing"
-      />
+          <img
+            data-aos="zoom-in"
+            src={imgBottom}
+            alt="Zespół VitaVoice performing"
+          />
+        </div>
+      </div>
 
       <h2 data-aos="fade-up">Opinie uczestniczek</h2>
       <Swiper

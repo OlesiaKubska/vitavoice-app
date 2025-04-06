@@ -20,11 +20,6 @@ const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     transition: background-color 0.3s ease, color 0.3s ease;
     line-height: 1.6;
-    padding: 1rem;
-
-    @media ${device.tablet} {
-      padding: 2rem;
-    }
   }
 
   h1, h2, h3, h4, h5, h6, p {
@@ -145,35 +140,6 @@ const GlobalStyles = createGlobalStyle`
     &:hover {
       background-color: ${({ theme }) => theme.primary};
       color: #fff;
-    }
-  }
-
-  .hero {
-    background: ${({ theme }) => theme.secondary};
-    padding: 4rem 2rem;
-    text-align: center;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-
-    @media ${device.tablet} {
-      padding: 6rem 3rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-
-      @media ${device.tablet} {
-        font-size: 3rem;
-      }
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 

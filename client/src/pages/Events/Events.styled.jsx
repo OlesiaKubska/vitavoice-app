@@ -38,6 +38,12 @@ export const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
 
     @media ${device.tablet} {
       width: 45%;

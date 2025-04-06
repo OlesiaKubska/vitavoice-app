@@ -2,22 +2,19 @@ import styled from "styled-components";
 import { device } from "./../../styles/breakpoints";
 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  @media ${device.tablet} {
-    padding: 2rem;
-  }
-
-  @media ${device.laptop} {
-    padding: 3rem;
-  }
+  border: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const Main = styled.main`
   flex: 1;
+  padding-top: 120px;
+
+  @media ${device.tablet} {
+    padding-top: 80px;
+  }
 `;

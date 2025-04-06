@@ -4,9 +4,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export const Wrapper = styled.section`
-  max-width: 1000px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 
   h1 {
     font-family: "Playfair Display", serif;
@@ -32,6 +33,7 @@ export const Wrapper = styled.section`
     flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 3rem;
+    padding: 0 1.5rem;
 
     @media ${device.laptop} {
       flex-direction: row;
@@ -81,6 +83,14 @@ export const Wrapper = styled.section`
       border-radius: 6px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
     }
+  }
+
+  .background {
+    background-color: ${({ theme }) => theme.secondary};
+  }
+
+  .intro-text2 {
+    padding: 2rem 1.5rem;
   }
 
   img {
