@@ -657,7 +657,6 @@ attempted value: ${d}
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  border: 1px solid ${({theme:n})=>n.border};
 `,U4=nt.main`
   flex: 1;
   padding-top: 120px;
