@@ -1,6 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import dotenv from 'dotenv';
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
 
@@ -10,14 +11,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('VitaVoice API is running.');
-});
+app.use("/api/contact", contactRoutes);
 
-app.post('/api/contact', (req, res) => {
-  const { name, email, message } = req.body;
-  console.log('Received contact message:', name, email, message);
-  res.status(200).json({ success: true, message: 'Message sent successfully!' });
+app.get("/", (req, res) => {
+  res.send("VitaVoice API is running.");
 });
 
 app.listen(PORT, () => {
