@@ -1,4 +1,6 @@
 import bcrypt from "bcrypt";
+import fs from "fs";
+import path from "path";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -108,5 +110,52 @@ export const updatePassword = async (req, res) => {
   } catch (error) {
     console.error("Password update error:", error);
     res.status(500).json({ message: "Failed to update password" });
+  }
+};
+
+export const uploadAvatar = async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: "No file uploaded" });
+  }
+
+  try {
+    const avatarPath = `/uploads/avatars/${req.file.filename}`;
+    const user = await prisma.user.update({
+      where: { id: req.user },
+      data: { avatar: avatarPath },
+    });
+
+    res.json({ message: "Avatar uploaded", avatar: user.avatar });
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const deleteAvatar = async (req, res) => {
+  try {
+    const user = await prisma.user.findUnique({
+      where: { id: req.user },
+    });
+
+    if (user.avatar) {
+      const fullPath = path.join(
+        "uploads",
+        "avatars",
+        path.basename(user.avatar)
+      );
+      fs.unlink(fullPath, (err) => {
+        if (err) console.error("Failed to delete file:", err);
+      });
+    }
+
+    await prisma.user.update({
+      where: { id: req.user },
+      data: { avatar: null },
+    });
+
+    res.json({ message: "Avatar deleted" });
+  } catch (error) {
+    console.error("Avatar deletion error:", error);
+    res.status(500).json({ message: "Failed to delete avatar" });
   }
 };
