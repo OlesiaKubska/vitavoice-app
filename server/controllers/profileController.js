@@ -66,3 +66,47 @@ export const deleteProfile = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+export const updateName = async (req, res) => {
+  const { name } = req.body;
+  if (!name) return res.status(400).json({ message: "Name is required" });
+
+  try {
+    const user = await prisma.user.update({
+      where: { id: req.user },
+      data: { name },
+    });
+    res.json({
+      message: "Name updated",
+      user: { id: user.id, name: user.name },
+    });
+  } catch (error) {
+    console.error("Name update error:", error);
+    res.status(500).json({ message: "Failed to update name" });
+  }
+};
+
+export const updatePassword = async (req, res) => {
+  const { currentPassword, newPassword } = req.body;
+
+  if (!currentPassword || !newPassword)
+    return res.status(400).json({ message: "Both passwords are required" });
+
+  try {
+    const user = await prisma.user.findUnique({ where: { id: req.user } });
+    const isMatch = await bcrypt.compare(currentPassword, user.password);
+    if (!isMatch)
+      return res.status(400).json({ message: "Incorrect current password" });
+
+    const hashed = await bcrypt.hash(newPassword, 10);
+    await prisma.user.update({
+      where: { id: req.user },
+      data: { password: hashed },
+    });
+
+    res.json({ message: "Password updated successfully" });
+  } catch (error) {
+    console.error("Password update error:", error);
+    res.status(500).json({ message: "Failed to update password" });
+  }
+};
