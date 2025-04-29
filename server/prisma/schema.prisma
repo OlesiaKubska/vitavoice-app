@@ -15,15 +15,20 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  name     String
-  email    String @unique
-  password String
-  createdAt DateTime @default(now())
-  avatar    String?
+  id               Int       @id @default(autoincrement())
+  name             String
+  email            String    @unique
+  password         String
+  avatar           String?
+  role             String    @default("user") // roles: user, admin
+  isActive         Boolean   @default(true)
+  isEmailVerified  Boolean   @default(false)
+  lastLogin        DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt @default(now())
 
-  registrations Registration[]
-  subscriptions Subscription[]
+  registrations    Registration[]
+  subscriptions    Subscription[]
 }
 
 model Event {
