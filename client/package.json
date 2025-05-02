@@ -12,6 +12,7 @@
     "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.7.0",
     "aos": "^2.3.4",
     "cookieconsent": "^3.1.1",
     "formik": "^2.4.6",
@@ -21,7 +22,9 @@
     "react-icons": "^5.5.0",
     "react-masonry-css": "^1.0.16",
     "react-player": "^2.16.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.4.1",
+    "redux-persist": "^6.0.0",
     "styled-components": "^6.1.16",
     "swiper": "^11.2.6",
     "yet-another-react-lightbox": "^3.22.0",
