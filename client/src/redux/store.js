@@ -7,7 +7,7 @@ import authReducer from "./auth/authSlice";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth"], // Only persist the auth slice
+  whitelist: ["auth"],
 };
 
 const rootReducer = combineReducers({
@@ -20,7 +20,7 @@ export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, // Disable serializable check for persist
+      serializableCheck: false,
     }),
 });
 
